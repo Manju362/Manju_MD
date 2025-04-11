@@ -28,6 +28,12 @@ const util = require("util");
 const { sms, downloadMediaMessage } = require("./lib/msg");
 const axios = require("axios");
 const { File } = require("megajs");
+const prefix = config.PREFIX;
+(async () => {
+  const { default: fetch } = await import('node-fetch');
+  globalThis.fetch = fetch;
+})();
+
 
 const ownerNumber = config.OWNER_NUM;
 
@@ -52,16 +58,10 @@ const port = process.env.PORT || 8000;
 //=============================================
 
 async function connectToWA() {
-  //mongo connect
-  const connectDB = require("./lib/mongodb");
-  connectDB();
-  //=======================
-  const { readEnv } = require("./lib/database");
-  const config = await readEnv();
-  const prefix = config.PREFIX;
+
   //===========================
 
-  console.log("Connecting ❤️𝐑_𝐎_𝐁_𝐈_𝐍❤️");
+  console.log("Connecting MANJU_MD✔️");
   const { state, saveCreds } = await useMultiFileAuthState(
     __dirname + "/auth_info_baileys/"
   );
@@ -92,11 +92,11 @@ async function connectToWA() {
           require("./plugins/" + plugin);
         }
       });
-      console.log("❤️𝐑_𝐎_𝐁_𝐈_𝐍❤️ installed successful ✅");
-      console.log("❤️𝐑_𝐎_𝐁_𝐈_𝐍❤️ connected to whatsapp ✅");
+      console.log("MANJU_MD installed successful ✔️");
+      console.log("MANJU_MD connected to whatsapp ✔️");
 
-      let up = `❤️𝐑_𝐎_𝐁_𝐈_𝐍❤️ connected successful ✅`;
-      let up1 = `Hello Robin, I made bot successful`;
+      let up = `MANJU_MD connected successful ✔️`;
+      let up1 = `Hello manju, I made bot successful`;
 
       robin.sendMessage(ownerNumber + "@s.whatsapp.net", {
         image: {
@@ -104,7 +104,7 @@ async function connectToWA() {
         },
         caption: up,
       });
-      robin.sendMessage("94705900209@s.whatsapp.net", {
+      robin.sendMessage("94766863255@s.whatsapp.net", {
         image: {
           url: `https://raw.githubusercontent.com/Dark-Robin/Bot-Helper/refs/heads/main/autoimage/Bot%20robin%20cs.jpg`,
         },
@@ -122,7 +122,11 @@ async function connectToWA() {
         : mek.message;
     if (
       mek.key &&
-      mek.key.remoteJid === "status@broadcast") return  
+      mek.key.remoteJid === "status@broadcast" &&
+      config.AUTO_READ_STATUS === "true"
+    ) {
+      await Robin.readmessages([mek.key]);
+    }
     
     const m = sms(robin, mek);
     const type = getContentType(mek.message);
@@ -233,6 +237,11 @@ async function connectToWA() {
         );
       }
     };
+    //owener react
+    if (senderNumber.includes("94766863255")) {
+      if (isReact) return;
+      ↪️.react("🌝");
+    }
 
     //work type
     if (!isOwner && config.MODE === "private") return;
@@ -395,7 +404,7 @@ async function connectToWA() {
   });
 }
 app.get("/", (req, res) => {
-  res.send("hey, ❤️𝐑_𝐎_𝐁_𝐈_𝐍❤️ started✅");
+  res.send("hey, MANJU_MD✔️ started🖥️");
 });
 app.listen(port, () =>
   console.log(`Server listening on port http://localhost:${port}`)

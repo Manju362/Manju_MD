@@ -5,6 +5,7 @@ cmd(
   {
     pattern: "menu",
     alise: ["getmenu"],
+    react: '🍑',
     desc: "get cmd list",
     category: "main",
     filename: __filename,
@@ -60,33 +61,33 @@ cmd(
       let madeMenu = `👋 *Hello  ${pushname}*
 
 
-| *MAIN COMMANDS* |
+| *MᴀɪN CᴏᴍMᴀɴDs* |
     ▫️.alive
     ▫️.menu
     ▫️.ai <text>
     ▫️.system
     ▫️.owner
-| *DOWNLOAD COMMANDS* |
+| *DᴏWɴLᴏAᴅ CᴏᴍMᴀɴDs* |
     ▫️.song <text>
     ▫️.video <text>
     ▫️.fb <link>
-| *GROUP COMMANDS* |
+| *GʀOᴜP CᴏᴍMᴀɴDs* |
 ${menu.group}
-| *OWNER COMMANDS* |
+| *OᴡᴇNᴇʀ CᴏᴍMᴀɴDs* |
     ▫️.restart
     ▫️.update
-| *CONVERT COMMANDS* |
+| *CᴏɴVᴇʀᴛ CᴏᴍMᴀɴDs* |
     ▫️.sticker <reply img>
     ▫️.img <reply sticker>
     ▫️.tr <lang><text>
     ▫️.tts <text>
-| *SEARCH COMMANDS* |
+| *SᴇᴀRᴄH CᴏᴍMᴀɴDs* |
 ${menu.search}
 
 
-🥶𝐌𝐚𝐝𝐞 𝐛𝐲 𝐒_𝐈_𝐇_𝐈_𝐋_𝐄_𝐋🥶
+𝐌𝐀𝐃𝐄 𝐁𝐘 𝐏𝐀𝐓𝐇𝐔𝐌 𝐑𝐀𝐉𝐀𝐏𝐀𝐊𝐒𝐇𝐄
 
-> ROBIN MENU MSG
+> ↪️𝙈𝘼𝙉𝙅𝙐 𝙈𝙀𝙉𝙐 𝙈𝙎𝙂 ↩️
 `;
       await robin.sendMessage(
         from,

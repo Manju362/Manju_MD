@@ -1,4 +1,4 @@
-const config = require('./settings'); // settings import
+const config = require('./settings');  // settings.js මොඩියුලය ආයාත කිරීම
 const { Boom } = require('@hapi/boom');
 const pino = require('pino');
 const chalk = require('chalk');
